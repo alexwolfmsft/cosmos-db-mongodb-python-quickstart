@@ -34,18 +34,16 @@ def hello_world():
     # Create database if it doesn't exist
     db = client[DB_NAME]
     if DB_NAME not in client.list_database_names():
-        # Create a database with 400 RU throughput that can be shared across
-        # the DB's collections
+        # Create a database
         db.command({"customAction": "CreateDatabase", "offerThroughput": 400})
         updates.append("Created db '{}' with shared throughput.\n".format(DB_NAME))
-        #print("Created db '{}' with shared throughput.\n".format(DB_NAME))
     else:
         updates.append("Using database: '{}'.\n".format(DB_NAME))
 
     # Create collection if it doesn't exist
     collection = db[COLLECTION_NAME]
     if COLLECTION_NAME not in db.list_collection_names():
-        # Creates a unsharded collection that uses the DBs shared throughput
+        # Creates an unsharded collection that uses the DBs shared throughput
         db.command(
             {"customAction": "CreateCollection", "collection": COLLECTION_NAME}
         )

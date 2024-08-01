@@ -1,6 +1,6 @@
-# Quickstart: Azure Cosmos DB for MongoDB client library for .NET
+# Quickstart: Azure Cosmos DB for MongoDB client library for Python
 
-This is a simple Blazor web application to illustrate common basic usage of Azure Cosmos DB for MongoDB's client library for .NET. This sample application accesses an existing account, database, and container using the [`Microsoft.Azure.Cosmos`](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) and  [`Azure.Identity`](https://www.nuget.org/packages/Azure.Identity) libraries from NuGet. Modify the source code and leverage the Infrastructure as Code (IaC) Bicep assets to get up and running quickly.
+This is a simple Python Flask web application to illustrate common basic usage of Azure Cosmos DB for MongoDB's client library for Python. This sample application accesses an existing account, database, and container using the [`Microsoft.Azure.Cosmos`](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) and  [`Azure.Identity`](https://www.nuget.org/packages/Azure.Identity) libraries from NuGet. Modify the source code and leverage the Infrastructure as Code (IaC) Bicep assets to get up and running quickly.
 
 When you are finished, you will have a fully functional web application deployed to Azure.
 
@@ -15,11 +15,11 @@ When you are finished, you will have a fully functional web application deployed
 The following prerequisites are required to use this application. Please ensure that you have them all installed locally.
 
 - [Azure Developer CLI](https://aka.ms/azd-install)
-- [.NET SDK 8.0](https://dotnet.microsoft.com/download/dotnet/8.0) 
+- [Python 3.8+](https://www.python.org/downloads/)
 
 ### Quickstart
 
-To learn how to get started with any template, follow the steps in [this quickstart](https://learn.microsoft.com/azure/cosmos-db/mongodb/quickstart-dotnet) with this template (`cosmos-db-mongodb-dotnet-quickstart`).
+To learn how to get started with any template, follow the steps in [this quickstart](https://learn.microsoft.com/azure/cosmos-db/mongodb/quickstart-python) with this template (`cosmos-db-mongodb-python-quickstart`).
 
 This quickstart will show you how to authenticate on Azure, initialize using a template, provision infrastructure and deploy code on Azure via the following commands:
 
@@ -29,7 +29,7 @@ azd auth login
 
 # First-time project setup. Initialize a project in the current directory, using this template.
 # Omit the --template argument if you are running in a development container.
-azd init --template cosmos-db-mongodb-dotnet-quickstart
+azd init --template cosmos-db-mongodb-python-quickstart
 
 # Provision and deploy to Azure
 azd up
@@ -42,7 +42,7 @@ This application utilizes the following Azure resources:
 - [**Azure Container Registry**](https://learn.microsoft.com/azure/container-registry/)
     - This services hosts the container image.
 - [**Azure Container Apps**](https://learn.microsoft.com/azure/container-apps/)
-    - This service hosts the ASP.NET Blazor web application.
+    - This service hosts the Python Flask web application.
 - [**Azure Cosmos DB for MongoDB**](https://learn.microsoft.com/azure/cosmos-db/) 
     - This service stores the collection data.
 
@@ -52,7 +52,7 @@ Here's a high level architecture diagram that illustrates these components. Noti
 %%{ init: { 'theme': 'base', 'themeVariables': { 'background': '#243A5E', 'primaryColor': '#50E6FF', 'primaryBorderColor': '#243A5E', 'tertiaryBorderColor': '#50E6FF', 'tertiaryColor': '#243A5E', 'fontFamily': 'Segoe UI', 'lineColor': '#FFFFFF', 'primaryTextColor': '#243A5E', 'tertiaryTextColor': '#FFFFFF' } }}%%
 flowchart TB
     subgraph web-app[Azure Container Apps]
-        app-framework([.NET 8 - Blazor])
+        app-framework([Python Flask]])
     end
     subgraph cosmos-db[Azure Cosmos for MongoDB]
         subgraph database-cosmicworks[Database: cosmicworks]
