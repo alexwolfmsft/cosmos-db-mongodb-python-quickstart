@@ -1,6 +1,6 @@
 # Quickstart: Azure Cosmos DB for MongoDB client library for Python
 
-This is a simple Python Flask web application to illustrate common basic usage of Azure Cosmos DB for MongoDB's client library for Python. This sample application accesses an existing account, database, and container using the [`Microsoft.Azure.Cosmos`](https://www.nuget.org/packages/Microsoft.Azure.Cosmos) and  [`Azure.Identity`](https://www.nuget.org/packages/Azure.Identity) libraries from NuGet. Modify the source code and leverage the Infrastructure as Code (IaC) Bicep assets to get up and running quickly.
+This is a simple Python Flask web application to illustrate common basic usage of Azure Cosmos DB for MongoDB's client library for Python. This sample application accesses an existing account, database, and container using the [PyMongo](https://www.mongodb.com/docs/drivers/pymongo/) package. Modify the source code and leverage the Infrastructure as Code (IaC) Bicep assets to get up and running quickly.
 
 When you are finished, you will have a fully functional web application deployed to Azure.
 
